@@ -30,7 +30,6 @@ public class PlayerPickUpDrop : MonoBehaviour {
             else 
             {
                 // Currently carrying something, drop
-                objectGrabbable.Drop();
                 if(Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, holderLayerMask))
                 {
                     if (raycastHit.transform.TryGetComponent(out ObjectHolder holder))
@@ -41,7 +40,7 @@ public class PlayerPickUpDrop : MonoBehaviour {
                 }
                 else
                 {
-                    
+                    objectGrabbable.Drop();
                 }
                 objectGrabbable = null;
             }

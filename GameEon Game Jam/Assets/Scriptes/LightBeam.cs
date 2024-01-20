@@ -14,7 +14,7 @@ public class LightBeam : MonoBehaviour
     }
     private void Update()
     {
-        castLaser(startPoint.position, transform.forward);
+        castLaser(startPoint.position, startPoint.forward);
     }
     private void castLaser(Vector3 position , Vector3 direction)
     {
@@ -33,6 +33,12 @@ public class LightBeam : MonoBehaviour
                 Vector3 newdirection = Vector3.Reflect(direction, hit.normal);
                 if (hit.collider.gameObject.layer != mirrorLayerIndex)
                 {
+                    if(hit.collider.TryGetComponent(out LightBeamReciver reciver))
+                    {
+                        reciver.OnPointLight();
+                        Debug.Log("Puzzle Solved Now You are abble to open door...");
+                        enabled = false;
+                    }
                     break;
                 }
                 else
