@@ -213,7 +213,7 @@ MonoBehaviour:
   groundedRadius: 0.28
   groundLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   cinemachineCameraTarget: {fileID: 7591677842274863883}
   topClamp: 90
   bottomClamp: -90
@@ -248,6 +248,10 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 55
+  holderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pickUpDistance: 4
 --- !u!1 &3614615153260842467
 GameObject:
   m_ObjectHideFlags: 0
